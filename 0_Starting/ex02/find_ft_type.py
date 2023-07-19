@@ -1,3 +1,4 @@
+# This function will find the type of the object passed as parameter and print it.
 def all_thing_is_obj(obj: any) -> int:
     if isinstance(obj, list):
         print("List:", type(obj))
