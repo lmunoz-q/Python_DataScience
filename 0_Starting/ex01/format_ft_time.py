@@ -12,5 +12,6 @@ date = datetime.now()
 # %d is the day of the month
 # %Y is the year
 formatted_date = date.strftime("%b %d %Y")
-print(f"Seconds since January 1, 1970: {epoch:,.4f} or {epoch:.2e} in scientific notation")
+print(f"Seconds since January 1, 1970: {epoch:,.4f} or "
+      f"{epoch:.2e} in scientific notation")
 print(formatted_date)

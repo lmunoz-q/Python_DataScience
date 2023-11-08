@@ -92,12 +92,12 @@ def print_building(string):
         None
     """
     output = (
-    f"The text contains {count_char(string)} characters:\n"
-    f"{count_upper(string)} upper letters\n"
-    f"{count_lower(string)} lower letters\n"
-    f"{count_punctuation(string)} punctuation marks\n"
-    f"{count_spaces(string)} spaces\n"
-    f"{count_digits(string)} digits")
+        f"The text contains {count_char(string)} characters:\n"
+        f"{count_upper(string)} upper letters\n"
+        f"{count_lower(string)} lower letters\n"
+        f"{count_punctuation(string)} punctuation marks\n"
+        f"{count_spaces(string)} spaces\n"
+        f"{count_digits(string)} digits")
     print(output)
 
 
