@@ -6,9 +6,9 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     for i, y in zip(height, weight):
         if not (isinstance(i, (int, float)) and isinstance(y, (int, float))):
             raise ValueError("Height and weight must be integers or floats")
-
         ret_list.append(y / i ** 2)
     return ret_list
+
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     if not all(isinstance(i, (int, float)) for i in bmi):
