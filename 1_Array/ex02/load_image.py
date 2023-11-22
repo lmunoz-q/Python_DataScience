@@ -10,6 +10,7 @@ def ft_load(path: str) -> list:
     for y in range((image.size[1]) // 99):
         for x in range((image.size[0]) // 99):
             for i in image.getpixel((x,y)):
+                print(i)
                 
     return(ret)
 
