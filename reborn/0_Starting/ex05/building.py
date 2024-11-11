@@ -1,7 +1,8 @@
 import sys
 
+
 def count_upper(text: str) -> int:
-    """
+    """count_upper(tecount_upper(text: str) -> itr) -> i
     Count the number of upper letters in a string
 
     Args:
@@ -11,6 +12,7 @@ def count_upper(text: str) -> int:
         int: number of upper letters in the string
     """
     return sum(1 for c in text if c.isupper())
+
 
 def count_lower(text: str) -> int:
     """
@@ -24,6 +26,7 @@ def count_lower(text: str) -> int:
     """
     return sum(1 for c in text if c.islower())
 
+
 def count_number(text: str) -> int:
     """
     Count the number of digits in a string
@@ -35,6 +38,7 @@ def count_number(text: str) -> int:
         int: number of digits in the string
     """
     return sum(1 for c in text if c.isdigit())
+
 
 def count_spaces(text: str) -> int:
     """
@@ -48,6 +52,7 @@ def count_spaces(text: str) -> int:
     """
     return sum(1 for c in text if c.isspace())
 
+
 def count_mark(text: str) -> int:
     """
     Count the number of punctuation marks in a string
@@ -60,6 +65,7 @@ def count_mark(text: str) -> int:
     """
     return sum(1 for c in text if c in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
 
+
 def print_building(text: str):
     print(f"The text contains {len(text)} characters:")
     print(f"{count_upper(text)} upper letters")
@@ -68,6 +74,7 @@ def print_building(text: str):
     print(f"{count_spaces(text)} spaces")
     print(f"{count_number(text)} digits")
 
+
 def main():
     assert len(sys.argv) < 3, "more than one argument provied"
     if len(sys.argv) == 1:
@@ -75,6 +82,7 @@ def main():
         print_building(text)
     else:
         print_building(sys.argv[1])
+
 
 if __name__ == "__main__":
     main()
