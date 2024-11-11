@@ -9,8 +9,4 @@ def ft_filter(function, iterable):
     Returns:
         list: A list containing the elements from iterable for which function returns True.
     """
-    x[]
-    for i in iterable:
-        if function(i):
-            x.append(i)
-    return x
+    return [x for x in iterable if function(x)]
