@@ -5,7 +5,9 @@ def ft_filter(function, iterable):
 
 def is_ok(text, number):
     if len(text) > number:
-        return text
+        return True
+    else:
+        return False
 
 def main():
     assert len(sys.argv) == 3, "the arguments are bad"
@@ -14,6 +16,10 @@ def main():
 
     print(f"{liste}")
     print(f"{chaine}")
+    print(f"{len(liste)}")
+    print(f"{len(chaine)}")
+
+    print(ft_filter(is_ok(chaine, 4), liste))
 
 if __name__ == "__main__":
     main()
