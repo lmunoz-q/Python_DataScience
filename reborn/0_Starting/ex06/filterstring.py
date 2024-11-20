@@ -19,7 +19,7 @@ def main():
     print(f"{len(liste)}")
     print(f"{len(chaine)}")
 
-    print(ft_filter(is_ok(chaine, 4), liste))
+    print(ft_filter(lambda word: is_ok(word, int(sys.argv[2])), liste))
 
 if __name__ == "__main__":
     main()
