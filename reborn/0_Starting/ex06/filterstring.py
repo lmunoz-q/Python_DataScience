@@ -7,16 +7,19 @@ def is_ok(text, number):
 
 
 def main():
-    assert len(sys.argv) == 3, "the arguments are bad"
     try:
-        int(sys.argv[2])
-    except:
-        print("the arguments are bad")
-    number = int(sys.argv[2])
-    liste = sys.argv[1].split()
+        assert len(sys.argv) == 3, "AssertionError: the arguments are bad"
+        try:
+            number = int(sys.argv[2])
+        except ValueError:
+            raise AssertionError("AssertionError: the arguments are bad")
+        liste = sys.argv[1].split()
 
-    print(ft_filter(lambda word: is_ok(word, number), liste))
+        print(ft_filter(lambda word: is_ok(word, number), liste))
 
+    except AssertionError as e:
+        print(e)
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
