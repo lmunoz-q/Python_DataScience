@@ -1,20 +1,15 @@
 def ft_filter(function, iterable):
     """
-    Filter elements of an iterable with a function
-    without using the built-in filter function.
+    Filter elements of an iterable with  fucntion wigoutusing th built-in
+    filter function.
 
     Args:
-        function (callable): A function that returns
-        True or False for each element.
-        iterable (iterable): The iterable to be filtered.
+        function (callable): A function that returns True or Flase for earch
+        element.
+        iterable (iteratable): The iterable to be filtered.
 
     Returns:
-        list: A list containing the elements from iterable
-        for which function returns True.
+        list: A list containing the elements from iterable for which function
+        returns True.
     """
     return [x for x in iterable if function(x)]
-
-
-"""
-Filter iterable with a function (Args: callable, iterable). Returns list.
-"""

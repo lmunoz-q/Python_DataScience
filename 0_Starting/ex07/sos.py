@@ -1,6 +1,5 @@
 import sys
 
-
 NESTED_MORSE = {
     " ": "/ ",
     "A": ".- ",
@@ -42,7 +41,7 @@ NESTED_MORSE = {
 }
 
 
-def print_morse(string):
+def morsify(text):
     """
     Print a string in morse code
 
@@ -52,19 +51,19 @@ def print_morse(string):
     Returns:
         None
     """
-    string = string.upper()
-    string = [NESTED_MORSE[c] for c in string]
-    string = "".join(string)
-    string = string[:-1]
-    print(string)
+    ret = ""
+    for i in text:
+        ret += NESTED_MORSE[(i.upper())]
+    ret = ret[:-1]
+    print(ret)
 
 
 def main():
     if len(sys.argv) != 2:
         raise AssertionError("the arguments are bad")
-    elif [c for c in sys.argv[1].upper() if c not in NESTED_MORSE]:
+    if [i for i in sys.argv[1].upper() if i not in NESTED_MORSE]:
         raise AssertionError("the arguments are bad")
-    print_morse(sys.argv[1])
+    morsify(sys.argv[1])
 
 
 if __name__ == "__main__":

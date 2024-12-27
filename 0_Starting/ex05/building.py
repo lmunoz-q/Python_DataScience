@@ -1,112 +1,85 @@
 import sys
 
 
-def count_char(string):
-    """
-    Count the number of characters in a string
-
-    Args:
-        string (str): string to count
-
-    Returns:
-        int: number of characters in the string
-    """
-    return len(string)
-
-
-def count_upper(string):
-    """
+def count_upper(text: str) -> int:
+    """count_upper(tecount_upper(text: str) -> itr) -> i
     Count the number of upper letters in a string
 
     Args:
-        string (str): string to count
+        text (str): string to count
 
     Returns:
         int: number of upper letters in the string
     """
-    return sum(1 for c in string if c.isupper())
+    return sum(1 for c in text if c.isupper())
 
 
-def count_lower(string):
+def count_lower(text: str) -> int:
     """
-    Count the number of lower letters in a string
+    Count the number of lower cases in a string
 
     Args:
-        string (str): string to count
+        text (str): string to count
 
     Returns:
         int: number of lower letters in the string
     """
-    return sum(1 for c in string if c.islower())
+    return sum(1 for c in text if c.islower())
 
 
-def count_punctuation(string):
-    """
-    Count the number of punctuation marks in a string
-
-    Args:
-        string (str): string to count
-
-    Returns:
-        int: number of punctuation marks in the string
-    """
-    return sum(1 for c in string if c in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
-
-
-def count_spaces(string):
-    """
-    Count the number of spaces in a string
-
-    Args:
-        string (str): string to count
-
-    Returns:
-        int: number of spaces in the string
-    """
-    return sum(1 for c in string if c == "\r" or c.isspace())
-
-
-def count_digits(string):
+def count_number(text: str) -> int:
     """
     Count the number of digits in a string
 
     Args:
-        string (str): string to count
+        text (str): string to count
 
     Returns:
         int: number of digits in the string
     """
-    return sum(1 for c in string if c.isdigit())
+    return sum(1 for c in text if c.isdigit())
 
 
-def print_building(string):
+def count_spaces(text: str) -> int:
     """
-    Print the number of characters,
-    upper letters, lower letters,
-    punctuation marks, spaces and digits in a string
+    Count the number of differents spaces in a string
 
     Args:
-        string (str): string to count
+        text (str): string to count
 
     Returns:
-        None
+        int: number of differents spaces in the string
     """
-    output = (
-        f"The text contains {count_char(string)} characters:\n"
-        f"{count_upper(string)} upper letters\n"
-        f"{count_lower(string)} lower letters\n"
-        f"{count_punctuation(string)} punctuation marks\n"
-        f"{count_spaces(string)} spaces\n"
-        f"{count_digits(string)} digits")
-    print(output)
+    return sum(1 for c in text if c.isspace())
+
+
+def count_mark(text: str) -> int:
+    """
+    Count the number of punctuation marks in a string
+
+    Args:
+        text (str): string to count
+
+    Returns:
+        int: number of punctiation marks in the string
+    """
+    return sum(1 for c in text if c in "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
+
+
+def print_building(text: str):
+    print(f"The text contains {len(text)} characters:")
+    print(f"{count_upper(text)} upper letters")
+    print(f"{count_lower(text)} lower letters")
+    print(f"{count_mark(text)} punctuation marks")
+    print(f"{count_spaces(text)} spaces")
+    print(f"{count_number(text)} digits")
 
 
 def main():
-    if len(sys.argv) > 2:
-        raise AssertionError("Too many arguments")
-    elif len(sys.argv) == 1:
-        user_input = input("What is the text to analyse?\n")
-        print_building(user_input)
+    assert len(sys.argv) < 3, "more than one argument provied"
+    if len(sys.argv) == 1:
+        text = input("What is the text to count ?\n")
+        print_building(text)
     else:
         print_building(sys.argv[1])
 

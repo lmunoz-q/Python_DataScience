@@ -1,7 +1,22 @@
 import sys
+from ft_filter import ft_filter
 
 
-def print_lista(string, integer):
+def is_ok(text, number):
+    """
+    Return True if the len of the text is upper than the number given
+
+    Args:
+        text (str): string to analyze
+        number (int): the len we want to
+
+    Return:
+        True or False
+    """
+    return len(text) > number
+
+
+def print_list(text, integer):
     """
     Print a list of words from a string that are longer
     than a given integer using list comprehension
@@ -13,35 +28,24 @@ def print_lista(string, integer):
     Returns:
         None
     """
-    words = string.split()
-    words = [word for word in words if len(word) > integer]
-    print(words)
-
-
-def print_list_lambda(string, integer):
-    """
-    Print a list of words from a string that are longer
-    than a given integer using lambda
-
-    Args:
-        string (str): string to print
-        integer (int): minimum length of words to print
-
-    Returns:
-    """
-    words = string.split()
-    words = list(filter(lambda x: len(x) > integer, words))
-    print(words)
+    words = text.split()
+    print([word for word in words if is_ok(word, integer)])
 
 
 def main():
-    test = sys.argv[2]
-    if not test.isdigit():
-        raise AssertionError("the arguments are bad")
-    if len(sys.argv) != 3 or not isinstance(sys.argv[1], str):
-        raise AssertionError("the arguments are bad")
-    print_lista(sys.argv[1], int(sys.argv[2]))
-#    print_list_lambda(sys.argv[1], int(sys.argv[2]))
+    try:
+        assert len(sys.argv) == 3, "AssertionError: the arguments are bad"
+        try:
+            number = int(sys.argv[2])
+        except ValueError:
+            raise AssertionError("AssertionError: the arguments are bad")
+        liste = sys.argv[1].split()
+        # print_list(sys.argv[1], number)
+        print(ft_filter(lambda word: is_ok(word, number), liste))
+
+    except AssertionError as e:
+        print(e)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
