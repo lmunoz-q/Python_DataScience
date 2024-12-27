@@ -7,21 +7,21 @@ This project underscores the importance of precision, creativity, and critical t
 
 Python - 0 - Starting: Fundamentals of Python programming and foundational concepts.
 ```diff
-+ Python - 0 - Starting : 100 / 100
++  Final Note : 100 / 100
 ```
 Python - 1 - Array: Working with arrays, emphasizing data manipulation and efficiency.
 ```diff
-+ Python - 1 - Array : 100 / 100
++ Final Note : 100 / 100
 ```
 Python - 2 - DataTable: Leveraging tables for structured data analysis.
 ```diff
-+ Python - 2 - DataTable : 100 / 100
++ Final Note : 100 / 100
 ```
 Python - 3 - OOP: Object-Oriented Programming principles applied to real-world scenarios.
 ```diff
-+ Python - 3 - OOP : 100 / 100
++ Final Note : 100 / 100
 ```
 Python - 4 - Dod: Advanced techniques in data operations and design.
 ```diff
-+ Python - 4 - Dod : 100 / 100
++ Final Note : 100 / 100
 ```
