@@ -7,7 +7,7 @@ This project underscores the importance of precision, creativity, and critical t
 
 Python - 0 - Starting: Fundamentals of Python programming and foundational concepts.
 ```diff
-+  Final Note : 100 / 100
++ Final Note : 100 / 100
 ```
 Python - 1 - Array: Working with arrays, emphasizing data manipulation and efficiency.
 ```diff
