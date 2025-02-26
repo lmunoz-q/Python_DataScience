@@ -4,8 +4,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def ft_load(path: str):
-    img = Image.open(path)
-    img_array = np.array(img)
-    print(f"The shape if image is: {img_array.shape}")
+    try:
+        img = Image.open(path)
+        if img.format not in ["JPEG", "JPG"]:
+            raise ValueError("Error: Only JPG and JPEG are allowed")
+        img_array = np.array(img)
+        print(f"The shape if image is: {img_array.shape}")
 
-    return img_array
+        return img_array
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    return None
