@@ -1,7 +1,11 @@
 from PIL import Image
+
+import matplotlib.pyplot as plt
 import numpy as np
 
 def ft_load(path: str):
-    img = Image.open("landscape.jpg")
+    img = Image.open(path)
     img_array = np.array(img)
-    print(img_array.shape)
+    print(f"The shape if image is: {img_array.shape}")
+
+    return img_array
