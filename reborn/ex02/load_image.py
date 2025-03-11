@@ -8,7 +8,7 @@ def ft_load(path: str):
         if img.format not in ["JPEG", "JPG"]:
             raise ValueError("Error: Only JPG and JPEG are allowed")
         img_array = np.array(img)
-        print(f"The shape if image is: {img_array.shape}")
+        print(f"The shape of image is: {img_array.shape}")
 
         return img_array
 
