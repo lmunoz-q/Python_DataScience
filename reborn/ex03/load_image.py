@@ -1,3 +1,20 @@
-from ex02/load_image.py import ft_load
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
 
-print(ft_load("anumal.jpg"))
+
+def ft_load(path: str):
+    try:
+        img = Image.open(path)
+        if img.format not in ["JPEG", "JPG"]:
+            raise ValueError("Error: Only JPG and JPEG are allowed")
+        img_array = np.array(img)
+        print(f"The shape of image is: {img_array.shape}")
+        plt.imshow(img_array)
+        plt.show()
+        return img_array
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    return None
