@@ -1,5 +1,4 @@
 from PIL import Image
-import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -10,8 +9,8 @@ def ft_load(path: str):
             raise ValueError("Error: Only JPG and JPEG are allowed")
         img_array = np.array(img)
         print(f"The shape of image is: {img_array.shape}")
-        plt.imshow(img_array)
-        plt.show()
+        print(img_array)
+
         return img_array
 
     except Exception as e:
