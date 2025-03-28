@@ -14,10 +14,13 @@ if img_array is not None:
     img_array_full = np.array(img)
 
     channel = img_array_full[:, :, 0]
-    z_image = slice_me(channel.tolist(), 0, 400)
-    z_image = [row[:400] for row in z_image]
-    print(f"New shape after slicing: ({len(z_image)}, {len(z_image[0])})")
-    print(np.array(channel)[0])
+    z_image = slice_me(channel.tolist(), 100, 500)
+    z_image = [row[450:850] for row in z_image]
+    z_image = np.array(z_image)
+    if z_image.ndim == 2:
+        z_image = np.expand_dims(z_image, axis=-1)
+    print(f"New shape after slicing: {z_image.shape}")
+    print(z_image)
 
     plt.imshow(z_image, cmap="gray")
     plt.show()
