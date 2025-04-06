@@ -1,11 +1,44 @@
 def slice_me(family: list, start: int, end: int) -> list:
+    """
+    Slice a 2D array (list of lists) from row index `start` to `end`
+    and display the original and new shape.
+
+    Parameters
+    ----------
+
+    family : list of list of int or float
+        2D array to slice. Each sublist must be of the same length
+        and contain numbers.
+
+    start : int
+        Starting index for slicing (inclusive).
+
+    end : int
+        Ending index for slicing (exclusive).
+
+    Returns
+    -------
+
+    list
+        Sliced 2D array (same number of columns, but fewer rows).
+
+    Raises
+    ------
+
+    TypeError
+        If family is not a 2D list of int or float.
+    ValueError
+        If rows don't all have the same number of columns.
+    IndexError
+        If trying to access columns in an empty list.
+    """
     lines = len(family)
     cols = len(family[0])
     for i in family:
         if not isinstance(i, list):
             raise AssertionError("'family' must be a array2D")
         for x in i:
-            if not isinstance(x, (int | float)):
+            if not isinstance(x, (int, float)):
                 raise AssertionError("array2D must contain integers or floats")
         if cols != len(i):
             raise AssertionError("List must contain lines with columns equal")
