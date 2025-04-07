@@ -21,7 +21,7 @@ def give_bmi(h: list[int | float], w: list[int | float]) -> list[int | float]:
     Raises
     ------
     AssertionError
-        If the two imput lists do not have the same lenght.
+        If the two input lists do not have the same length.
 
     TypeError
         If any element in the lists is not an int or a float.
@@ -62,5 +62,5 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         if not isinstance(x, (int, float)):
             raise TypeError("List must contain only integers or floats.")
     if not isinstance(limit, int):
-        raise TypeError("'limit' must be a integer")
+        raise TypeError("'limit' must be an integer")
     return [x > limit for x in bmi]

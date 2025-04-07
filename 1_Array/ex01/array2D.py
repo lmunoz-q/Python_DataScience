@@ -32,16 +32,18 @@ def slice_me(family: list, start: int, end: int) -> list:
     IndexError
         If trying to access columns in an empty list.
     """
+    if not family:
+        raise ValueError("'family' must not be empty")
     lines = len(family)
     cols = len(family[0])
     for i in family:
         if not isinstance(i, list):
-            raise AssertionError("'family' must be a array2D")
+            raise TypeError("'family' must be a list of lists")
         for x in i:
             if not isinstance(x, (int, float)):
-                raise AssertionError("array2D must contain integers or floats")
+                raise TypeError("Elements must be integers or floats")
         if cols != len(i):
-            raise AssertionError("List must contain lines with columns equal")
+            raise ValueError("All rows must have the same number of columns")
 
     sFamily = family[start:end]
     sLines = len(sFamily)
