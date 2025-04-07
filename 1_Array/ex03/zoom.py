@@ -1,29 +1,26 @@
-import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
+import numpy as np
+from load_image import ft_load, slice_me
 
 
-def main():
-	try:
-		# Load the image
-		img = Image.open("animal.jpeg")
-		img_array = np.array(img)
+pathImg = "animal.jpeg"
+img_array = ft_load(pathImg)
 
-		# Print image information
-		print(f"The shape of image is: {img_array.shape}")
-		print(f"Pixel content of the image:\n{img_array}")
+if img_array is not None:
+    print(img_array)
 
-		# Display the image
-		plt.imshow(img_array)
-		plt.title('Sexy Raccoon')
-		plt.axis('on')  # Display axes
-		plt.show()
+    img = Image.open(pathImg)
+    img_array_full = np.array(img)
 
-	except FileNotFoundError:
-		print("Error: The file 'animal.jpeg' was not found.")
-	except Exception as e:
-		print(f"An error occurred: {e}")
+    channel = img_array_full[:, :, 0]
+    z_image = slice_me(channel.tolist(), 100, 500)
+    z_image = [row[450:850] for row in z_image]
+    z_image = np.array(z_image)
+    if z_image.ndim == 2:
+        z_image = np.expand_dims(z_image, axis=-1)
+    print(f"New shape after slicing: {z_image.shape}")
+    print(z_image)
 
-
-if __name__ == "__main__":
-	main()
+    plt.imshow(z_image, cmap="gray")
+    plt.show()

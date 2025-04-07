@@ -2,16 +2,17 @@ from PIL import Image
 import numpy as np
 
 
-def ft_load(path: str) -> list:
-    if not path.lower().endswith((".jpg", ".jpeg")):
-        raise ValueError("File must be .jpg or .jpeg")
-
-
+def ft_load(path: str):
     try:
-        image = Image.open(path)
-    except IOError:
-        raise IOError("Impossible to open file, make sure it's a .jpg or .jpeg valid")
+        img = Image.open(path)
+        if img.format not in ["JPEG", "JPG"]:
+            raise ValueError("Error: Only JPG and JPEG are allowed")
+        img_array = np.array(img)
+        print(f"The shape of image is: {img_array.shape}")
 
+        return img_array
 
-    ret = np.array(image)
-    return ret
+    except Exception as e:
+        print(f"Error: {e}")
+
+    return None
