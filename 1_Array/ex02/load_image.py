@@ -31,7 +31,6 @@ def ft_load(path: str) -> np.ndarray | None:
             raise ValueError("Error: Only JPG and JPEG are allowed")
         img_array = np.array(img)
         print(f"The shape of image is: {img_array.shape}")
-
         return img_array
 
     except Exception as e:
