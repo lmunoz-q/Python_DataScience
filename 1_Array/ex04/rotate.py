@@ -12,19 +12,34 @@ def ft_zoom(path: str) -> np.ndarray:
         zoom = np.array(zoom)
         if zoom.ndim == 2:
             zoom = np.expand_dims(zoom, axis=-1)
-
     return zoom
+
+
+def ft_print_shape(img: np.ndarray) -> None:
+    print(img[0:1, 0:3])
+    print("   ...")
+    print(img[-1:, -3:])
 
 
 def ft_rotate(img: np.ndarray) -> None:
     if isinstance(img, np.ndarray):
         print(f"The shape if image is: {img.shape}")
-        print(img[0:1, 0:3])
-        print("   ...")
-        print(img[-1:, -3:])
-        transpose[i][j] = img[j][i]
-        print(f"New shape after Transpose: {img.shape}")
-        plt.imshow(img, cmap="gray")
+        ft_print_shape(img)
+        img2d = img[:, :, 0]
+        rows = len(img2d)
+        cols = len(img2d[0])
+        transposed = []
+        for j in range(cols):
+            new_row = []
+            for i in range(rows):
+                new_row.append(img2d[i][j])
+            transposed.append(new_row)
+
+        transposed = np.array(transposed)
+        transposed = np.expand_dims(transposed, axis=-1)
+        print(f"New shape after Transpose: {transposed.shape}")
+        ft_print_shape(transposed)
+        plt.imshow(transposed, cmap="gray")
         plt.show()
 
 
