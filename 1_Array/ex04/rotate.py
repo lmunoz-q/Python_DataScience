@@ -22,6 +22,7 @@ def ft_rotate(img: np.ndarray) -> None:
         print(img[0:1, 0:3])
         print("   ...")
         print(img[-1:, -3:])
+        transpose[i][j] = img[j][i]
         print(f"New shape after Transpose: {img.shape}")
         plt.imshow(img, cmap="gray")
         plt.show()
