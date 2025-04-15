@@ -4,6 +4,19 @@ import numpy as np
 
 
 def ft_zoom(path: str) -> np.ndarray:
+    """
+    Extracts a 400x400 square from the red channel of an image
+
+    Parameters
+    ----------
+    path : str
+        Path to the image file.
+
+    Returns
+    -------
+    np.ndarray
+        Zoomed region of the image with shape (400, 400, 1).
+    """
     img_array = ft_load(path)
 
     if img_array is not None:
@@ -16,14 +29,30 @@ def ft_zoom(path: str) -> np.ndarray:
 
 
 def ft_print_shape(img: np.ndarray) -> None:
+    """
+    Display the first and lst 3 pixels from the first and last wor of the image
+
+    Parameters
+    ----------
+    img : np.ndarray
+        Image array to prevew.
+    """
     print(img[0:1, 0:3])
     print("   ...")
     print(img[-1:, -3:])
 
 
 def ft_rotate(img: np.ndarray) -> None:
+    """
+    Rotates a grayscale image by transposing it (90 degrers of rotation)
+
+    Parameters
+    ----------
+    img : np.ndarray
+        Input image shape (H, W, 1)
+    """
     if isinstance(img, np.ndarray):
-        print(f"The shape if image is: {img.shape}")
+        print(f"The shape of image is: {img.shape}")
         ft_print_shape(img)
         img2d = img[:, :, 0]
         rows = len(img2d)
