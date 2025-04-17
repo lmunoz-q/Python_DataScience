@@ -8,9 +8,9 @@ def ft_invert(array) -> np.ndarray:
     for y in range(len(invert)):
         for x in range(len(invert[0])):
             invert[y][x] = 255 - invert[y][x]
-    plt.imshow(array)
+    plt.imshow(invert)
     plt.show()
-    return array
+    return invert
 
 
 #def ft_red(array) -> np.ndarray:
