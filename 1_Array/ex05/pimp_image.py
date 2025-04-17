@@ -3,11 +3,36 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def ft_invert(array) -> np.ndarray:
+    invert = array
+    for y in range(len(invert)):
+        for x in range(len(invert[0])):
+            invert[y][x] = 255 - invert[y][x]
+    plt.imshow(array)
+    plt.show()
+    return array
+
+
+#def ft_red(array) -> np.ndarray:
+#    print(array)
+
+
+#def ft_blue(array) -> array:
+#    print(array)
+
+
+#def ft_green(array) -> array:
+#    print(array)
+
+
+#def ft_gray(array) -> array:
+#    print(array)
+
+
 def main():
     path = "landscape.jpg"
-    img = ft_load(path)
-    plt.imshow(img)
-    plt.show()
+    array = ft_load(path)
+    ft_invert(array)
 
 
 if __name__ == "__main__":
