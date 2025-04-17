@@ -1,10 +1,13 @@
 from load_image import ft_load
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def main():
     path = "landscape.jpg"
-    ft_load(path)
-    print(ft_load.__doc__)
+    img = ft_load(path)
+    plt.imshow(img)
+    plt.show()
 
 
 if __name__ == "__main__":
