@@ -1,12 +1,10 @@
-from load_image import ft_load
 import matplotlib.pyplot as plt
 import numpy as np
 
 
 def ft_invert(array: np.ndarray) -> np.ndarray:
     """
-    Invert the colors of the image received, and return into a np.ndarray
-    array.
+    Invert the colors of the image received, and return a np.ndarray.
 
     Parameters
     ----------
@@ -15,7 +13,7 @@ def ft_invert(array: np.ndarray) -> np.ndarray:
     Returns
     -------
     np.ndarray
-        The same image array, modified in-place and invert colors.
+        The same image array, modified in-place with invert colors.
     """
     for y in range(len(array)):
         for x in range(len(array[0])):
@@ -29,7 +27,8 @@ def ft_invert(array: np.ndarray) -> np.ndarray:
 
 def ft_red(array: np.ndarray) -> np.ndarray:
     """
-    Removes all colors except red of the image received and return into np.ndarray
+    Removes all colors except red of the image received and return into
+    np.ndarray.
 
     Parameters
     ----------
@@ -39,7 +38,8 @@ def ft_red(array: np.ndarray) -> np.ndarray:
     Returns
     -------
     np.ndarray
-        The same image array, modified in-place and removing all colors except red.
+        The same image array, modified in-place and removing all colors except
+        red.
     """
     print(f"the shape of image is : {array.shape}")
     for y in range(len(array)):
@@ -55,7 +55,8 @@ def ft_red(array: np.ndarray) -> np.ndarray:
 
 def ft_blue(array: np.ndarray) -> np.ndarray:
     """
-    Removes all colors except blue of the image received and return into np.ndarray
+    Removes all colors except blue of the image received and return into
+    np.ndarray.
 
     Parameters
     ----------
@@ -65,7 +66,8 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
     Returns
     -------
     np.ndarray
-        The same image array, modified in-place removing all colors except blue.
+        The same image array, modified in-place removing all colors except
+        blue.
     """
     for y in range(len(array)):
         for x in range(len(array[0])):
@@ -80,7 +82,8 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
 
 def ft_green(array: np.ndarray) -> np.ndarray:
     """
-    Removes all colors except green of the image received and return into a np.ndarray
+    Removes all colors except green of the image received and return into a
+    np.ndarray.
 
     Parameters
     ----------
@@ -90,7 +93,8 @@ def ft_green(array: np.ndarray) -> np.ndarray:
     Returns
     -------
     np.ndarray
-        The same image array, modified in-place removing all colors except green.
+        The same image array, modified in-place removing all colors except
+        green.
     """
     for y in range(len(array)):
         for x in range(len(array[0])):
@@ -119,7 +123,8 @@ def ft_grey(array: np.ndarray) -> np.array:
     """
     for y in range(len(array)):
         for x in range(len(array[0])):
-            gray = int(int(array[y][x][0]) + int(array[y][x][1]) + int(array[y][x][2])) / 3
+            gray = int(int(array[y][x][0]) + int(array[y][x][1]) 
+                    + int(array[y][x][2])) / 3
             array[y][x][0] = np.uint8(gray)
             array[y][x][1] = np.uint8(gray)
             array[y][x][2] = np.uint8(gray)

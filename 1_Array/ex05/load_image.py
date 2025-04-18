@@ -28,7 +28,7 @@ def ft_load(path: str):
     try:
         img = Image.open(path)
         if img.format not in ["JPEG", "JPG"]:
-            raise ValueError("Error: ONly JPG and JPEG are allowed")
+            raise ValueError("Error: Only JPG and JPEG are allowed")
         img_array = np.array(img)
         return img_array
 
