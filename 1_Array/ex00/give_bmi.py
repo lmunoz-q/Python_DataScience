@@ -62,5 +62,5 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         if not isinstance(x, (int, float)):
             raise TypeError("List must contain only integers or floats.")
     if not isinstance(limit, int):
-        raise TypeError("'limit' must be an integer")
+        raise TypeError("'limit' must be a integer")
     return [x > limit for x in bmi]
