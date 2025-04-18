@@ -73,8 +73,7 @@ def ft_rotate(img: np.ndarray) -> None:
 
 
 def main():
-    path = "animal.jpeg"
-    img = ft_zoom(path)
+    img = ft_zoom("animal.jpeg")
     ft_rotate(img)
 
 
