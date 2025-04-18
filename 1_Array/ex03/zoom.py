@@ -5,7 +5,7 @@ from load_image import ft_load
 
 def ft_zoom(path: str) -> None:
     """
-    Loads an image, extracs a 400x400 zoom on the red channel,
+    Loads an image, extracts a 400x400 zoom on the red channel,
     prints the shape, preview of the array and displays it in gray.
 
     Parameters
