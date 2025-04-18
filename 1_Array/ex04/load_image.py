@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-def ft_load(path: str): -> np.ndarray
+def ft_load(path: str) -> np.ndarray:
     """
     Load an image file and return its content as a NumPy array.
 

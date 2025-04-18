@@ -9,7 +9,7 @@ def ft_zoom(path: str) -> np.ndarray:
 
     Parameters
     ----------
-    path : str
+    path: str
         Path to the image file.
 
     Returns
@@ -30,12 +30,12 @@ def ft_zoom(path: str) -> np.ndarray:
 
 def ft_print_shape(img: np.ndarray) -> None:
     """
-    Display the first and lst 3 pixels from the first and last wor of the image
+    Display the first and last 3 pixels from the first and last row of the image
 
     Parameters
     ----------
-    img : np.ndarray
-        Image array to prevew.
+    img: np.ndarray
+        Image array to preview.
     """
     print(img[0:1, 0:3])
     print("   ...")
@@ -44,12 +44,12 @@ def ft_print_shape(img: np.ndarray) -> None:
 
 def ft_rotate(img: np.ndarray) -> None:
     """
-    Rotates a grayscale image by transposing it (90 degrers of rotation)
+    Rotates a grayscale image by transposing it (90 degrees of rotation)
 
     Parameters
     ----------
-    img : np.ndarray
-        Input image shape (H, W, 1)
+    img: np.ndarray
+        Input image shape (H, W, 1).
     """
     if isinstance(img, np.ndarray):
         print(f"The shape of image is: {img.shape}")
