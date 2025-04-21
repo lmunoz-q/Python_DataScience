@@ -30,7 +30,8 @@ def ft_zoom(path: str) -> np.ndarray:
 
 def ft_print_shape(img: np.ndarray) -> None:
     """
-    Display the first and last 3 pixels from the first and last row of the image
+    Display the first and last 3 pixels from the first and last row of The
+    image
 
     Parameters
     ----------

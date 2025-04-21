@@ -123,8 +123,8 @@ def ft_grey(array: np.ndarray) -> np.array:
     """
     for y in range(len(array)):
         for x in range(len(array[0])):
-            gray = int(int(array[y][x][0]) + int(array[y][x][1]) 
-                    + int(array[y][x][2])) / 3
+            gray = int(int(array[y][x][0]) + int(array[y][x][1])
+                       + int(array[y][x][2])) / 3
             array[y][x][0] = np.uint8(gray)
             array[y][x][1] = np.uint8(gray)
             array[y][x][2] = np.uint8(gray)
