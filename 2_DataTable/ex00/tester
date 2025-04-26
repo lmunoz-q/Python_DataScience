@@ -1,3 +1,0 @@
-from load_csv import load
-
-print(load("../ressources/life_expectancy_years.csv"))
