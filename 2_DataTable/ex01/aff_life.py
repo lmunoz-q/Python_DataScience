@@ -5,12 +5,16 @@ from load_csv import load
 def main():
     path =  "../ressources/life_expectancy_years.csv"
     df = load(path)
-    country = df.loc[df['country'] == "France"]
+    var_country = "Australia"
+    df_country = df.loc[df['country'] == var_country]
     years = df.columns[1:]
-    life_expectancy = country.values[0][1:]
-    plt.plot(years, life_expectancy)
-    plt.title("France Life expectancy Projections")
-    plt.xlabel("Years")
+    int_years = []
+    for i in years:
+        int_years.append(int(i))
+    life_expectancy = df_country.values[0][1:]
+    plt.plot(int_years, life_expectancy)
+    plt.title(f"{var_country} Life expectancy Projections")
+    plt.xlabel("Year")
     plt.ylabel("Life expectancy")
 
     plt.show()
