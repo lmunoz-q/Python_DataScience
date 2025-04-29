@@ -3,7 +3,7 @@ from load_csv import load
 
 
 def main():
-    path =  "../ressources/life_expectancy_years.csv"
+    path = "../ressources/life_expectancy_years.csv"
     df = load(path)
     var_country = "France"
     df_country = df.loc[df['country'] == var_country]
@@ -18,7 +18,6 @@ def main():
     plt.ylabel("Life expectancy")
 
     plt.show()
-
 
 
 if __name__ == "__main__":
