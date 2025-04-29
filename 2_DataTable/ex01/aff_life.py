@@ -5,7 +5,7 @@ from load_csv import load
 def main():
     path =  "../ressources/life_expectancy_years.csv"
     df = load(path)
-    var_country = "Australia"
+    var_country = "France"
     df_country = df.loc[df['country'] == var_country]
     years = df.columns[1:]
     int_years = []
