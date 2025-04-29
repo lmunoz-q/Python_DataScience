@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def latoi(index) -> list:
     """
-    Convet a list of numbers given as strings into integers.
+    Convert a list of numbers given as strings into integers.
 
     Parameters
     ----------
@@ -24,7 +24,7 @@ def latoi(index) -> list:
 
 def latof(index) -> list:
     """
-    Comvert a list of numbers given as strings into floats, scaling 'M' as
+    Convert a list of numbers given as strings into floats, scaling 'M' as
     millions and 'k' as thousands.
 
     Parameters
