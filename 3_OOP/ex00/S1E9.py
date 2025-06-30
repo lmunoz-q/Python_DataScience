@@ -1,21 +1,53 @@
-class Character():
+from abc import ABC, abstractmethod
+
+
+class Character(ABC):
     """
-    Character doc
+    Abstract base class representing a generic character.
+
+    Attributes
+    ----------
+    first_name : str
+        The character's first name.
+    is_alive : bool
+        True if the character is alive, False otherwise.
     """
-    def __init__(self, first_name):
+    def __init__(self, first_name, is_alive=True):
         """
-        init doc
+        Initialize a character with a first name and alive status.
+
+        Parameters
+        ----------
+        first_name : str
+            The character's first name.
+        is_alive : bool, optional
+            Alive status, True by default.
         """
         self.first_name = first_name
-        is_alive = True
-
-    def die():
+        self.is_alive = is_alive
+    @abstractmethod
+    def die(self):
         """
-        killed mf
+        Mark the character as deceased by setting is_alive to False.
         """
-        self.is_alive = False
+        pass
 
 class Stark(Character):
     """
-    Stark doc
+    Class representing a Stark character, inheriting from Character.
     """
+    def __init__(self, first_name, is_alive=True):
+        """
+        Initialize a Stark character.
+
+        Parameters
+        ----------
+        first_name : str
+            The character's first name.
+        is_alive : bool, optional
+            Alive status, True by default.
+        """
+        super().__init__(first_name, is_alive)
+
+    def die(self):
+        self.is_alive = False
