@@ -1,15 +1,12 @@
-
-
-
-class Stark():
+class Character():
     """
-    Stark doc
+    Character doc
     """
-    def __init__(self, name):
+    def __init__(self, first_name):
         """
         init doc
         """
-        self.name = name
+        self.first_name = first_name
         is_alive = True
 
     def die():
@@ -17,3 +14,8 @@ class Stark():
         killed mf
         """
         self.is_alive = False
+
+class Stark(Character):
+    """
+    Stark doc
+    """
