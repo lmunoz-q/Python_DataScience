@@ -25,11 +25,9 @@ class Character(ABC):
         """
         self.first_name = first_name
         self.is_alive = is_alive
+
     @abstractmethod
     def die(self):
-        """
-        Mark the character as deceased by setting is_alive to False.
-        """
         pass
 
 class Stark(Character):
@@ -50,4 +48,7 @@ class Stark(Character):
         super().__init__(first_name, is_alive)
 
     def die(self):
+        """
+        Mark the character as die by setting is_alive to False.
+        """
         self.is_alive = False
