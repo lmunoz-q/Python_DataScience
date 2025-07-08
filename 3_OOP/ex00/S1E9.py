@@ -12,6 +12,7 @@ class Character(ABC):
     is_alive : bool
         True if the character is alive, False otherwise.
     """
+
     def __init__(self, first_name, is_alive=True):
         """
         Initialize a character with a first name and alive status.
@@ -29,6 +30,7 @@ class Character(ABC):
     @abstractmethod
     def die(self):
         pass
+
 
 class Stark(Character):
     """

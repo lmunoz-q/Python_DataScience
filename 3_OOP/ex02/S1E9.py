@@ -30,6 +30,7 @@ class Character(ABC):
     def die(self):
         pass
 
+
 class Stark(Character):
     """
     Class representing a Stark character, inheriting from Character.

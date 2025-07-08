@@ -1,5 +1,6 @@
 from S1E9 import Character
 
+
 class Baratheon(Character):
     """
     Representing the Baratheon family.
@@ -18,6 +19,7 @@ class Baratheon(Character):
 
     def die(self):
         self.is_alive = False
+
 
 class Lannister(Character):
     def __init__(self, first_name, is_alive=True):
