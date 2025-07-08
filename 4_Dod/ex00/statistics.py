@@ -13,6 +13,15 @@ def quartilator(sorted_list: list, quartile: int) -> float:
     else:
         return (sorted_list[int(index)] * (1 - decimal)) + (decimal * sorted_list[int(index) + 1])
 
+
+def variation(sorted_list: list, moyenne: float) -> float:
+    ret = 0
+    for i in sorted_list:
+        ret += (i - moyenne) ** 2
+    return (ret / len(sorted_list))
+
+
+
 def ft_statistics(*args: any, **kwargs: any) -> None:
     sorted_list = []
     for i in args:
@@ -24,6 +33,13 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
         moyenne += i
     moyenne /= len_args
     if "mean" in kwargs.values():
-        print(f"mean : {moyenne}")
-    print(f"median : {quartilator(sorted_list, 50)}")
-    print(f"quartile : [{quartilator(sorted_list, 25)}, {quartilator(sorted_list, 75)}]")
+        print(f"mean : {moyenne}" if args else "ERROR")
+    if "median" in kwargs.values():
+        print(f"median : {quartilator(sorted_list, 50)}" if len_args > 0 else "ERROR")
+    if "quartile" in kwargs.values():
+        print(f"quartile : [{quartilator(sorted_list, 25)}, {quartilator(sorted_list, 75)}]" if len_args > 0 else "ERROR")
+    if "std" in kwargs.values():
+        print(f"std : {variation(sorted_list, moyenne) ** 0.5}" if len_args > 0 else "ERROR")
+    if "var" in kwargs.values():
+        print(f"var : {variation(sorted_list, moyenne)}" if len_args > 0 else "ERROR")
+
