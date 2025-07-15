@@ -23,6 +23,9 @@ def variation(sorted_list: list, moyenne: float) -> float:
 
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    if not args:
+        print("ERROR")
+        return
     lst = []
     for i in args:
         lst.append(float(i))
