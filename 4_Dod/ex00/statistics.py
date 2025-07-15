@@ -1,4 +1,16 @@
 def quarted(sorted_list: list, quartile: int) -> float:
+    """
+    Compute a specified quartile (25%, 50%, or 75%) of a sorted list.
+
+    Formula:
+        The quartile is computed using interpolation if the index
+        is not an integer:
+        Q_p = ((1 - d) * x_i) + (d * x_{i+1})
+        where d is the decimal part of the index.
+
+    Note:
+        The list must be sorted before calling this function.
+    """
     n = len(sorted_list)
     index = 0
     if quartile == 25:
@@ -16,6 +28,12 @@ def quarted(sorted_list: list, quartile: int) -> float:
 
 
 def variation(sorted_list: list, moyenne: float) -> float:
+    """
+    Compute the variance of a list of numerical values.
+
+    Formula:
+        Var(X) = (1/n) * Σ (x_i - mean)^2
+    """
     ret = 0
     for i in sorted_list:
         ret += (i - moyenne) ** 2
@@ -23,6 +41,23 @@ def variation(sorted_list: list, moyenne: float) -> float:
 
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """
+    Compute and print statistical measures
+    (mean, median, quartile, standard deviation, variance)
+    based on the requested keywords.
+
+    Formulas:
+        - Mean:
+            mean = (1/n) * Σ x_i
+        - Median:
+            middle value after sorting the list.
+        - Quartiles:
+            25% and 75% percentiles, using interpolation if needed.
+        - Variance:
+            Var(X) = (1/n) * Σ (x_i - mean)^2
+        - Standard deviation:
+            std = sqrt(Var(X))
+    """
     if not args:
         print("ERROR")
         return
