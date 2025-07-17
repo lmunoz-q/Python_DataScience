@@ -2,6 +2,7 @@ import random
 import string
 from dataclasses import dataclass, field
 
+
 def generate_id() -> str:
     """
     Generate a random identifier composed of 15 lowercase letters.
@@ -9,7 +10,7 @@ def generate_id() -> str:
     Returns:
         str: A string of 15 random lowercase characters.
     """
-    return "".join(random.choices(string.ascii_lowercase, k = 15))
+    return "".join(random.choices(string.ascii_lowercase, k=15))
 
 
 @dataclass
